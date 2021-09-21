@@ -1,9 +1,18 @@
 import * as fs from 'fs';
 import _ from 'lodash';
+import path from 'path';
+import parse from './parsers.js';
 
-const genDiff = (filepath1, filepath2) => {
-  const object1 = JSON.parse(fs.readFileSync(filepath1, 'utf8'));
-  const object2 = JSON.parse(fs.readFileSync(filepath2, 'utf8'));
+const makeObject = (filepath) => {
+  const data = fs.readFileSync(filepath, 'utf-8');
+  const format = path.extname(filepath);
+  const object = parse(data, format);
+  return object;
+};
+
+export const genDiff = (filepath1, filepath2) => {
+  const object1 = makeObject(filepath1);
+  const object2 = makeObject(filepath2);
   const keys = _.union(_.keys(object1), _.keys(object2));
   const sortedKeys = _.sortBy(keys, (key) => key);
   const result = sortedKeys.reduce((acc, key) => {
