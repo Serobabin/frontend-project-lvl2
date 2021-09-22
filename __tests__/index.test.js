@@ -21,19 +21,24 @@ test('testing genDiff', () => {
   expect(genDiff(filepath1, filepath2)).toEqual(string);
 });
 test('testing parse', () => {
-  const object = {
+  const object1 = {
     host: 'hexlet.io',
     timeout: 50,
     proxy: '123.234.53.22',
     follow: false,
   };
+  const object2 = {
+    timeout: 20,
+    verbose: true,
+    host: 'hexlet.io',
+  };
   const data1 = readFile(filepath1);
   const format1 = getFormat(filepath1);
-  expect(parse(data1, format1)).toEqual(object);
+  expect(parse(data1, format1)).toEqual(object1);
   const data2 = readFile(filepath3);
   const format2 = getFormat(filepath3);
-  expect(parse(data2, format2)).toEqual(object);
+  expect(parse(data2, format2)).toEqual(object1);
   const data3 = readFile(filepath4);
   const format3 = getFormat(filepath4);
-  expect(parse(data3, format3)).toEqual(object);
+  expect(parse(data3, format3)).toEqual(object2);
 });
