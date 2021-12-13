@@ -1,14 +1,7 @@
 import _ from 'lodash';
-
-const getValue = (node) => node.value;
-
-const getOldValue = (node) => node.oldValue;
-
-const getStatus = (node) => node.status;
-
-const getChildren = (node) => node.children.slice();
-
-const getName = (node) => node.nodeName;
+import {
+  getName, getStatus, getValue, getOldValue, getChildren,
+} from './myFunctions.js';
 
 const getOperations = (node) => {
   const status = getStatus(node);
@@ -58,7 +51,7 @@ const stylish = (tree) => {
         }
         const { secondOperation } = operations;
         const oldValue = getOldValue(node);
-        return `${currentIndent}${firstOperation}${name}: ${stringify(value, indent, indentSize)}\n${currentIndent}${secondOperation}${name}: ${stringify(oldValue, indent, indentSize)}`;
+        return `${currentIndent}${firstOperation}${name}: ${stringify(oldValue, indent, indentSize)}\n${currentIndent}${secondOperation}${name}: ${stringify(value, indent, indentSize)}`;
       }
       const children = getChildren(node);
       return `${currentIndent}${firstOperation}${name}: ${iter(children, indentSize + 4)}`;

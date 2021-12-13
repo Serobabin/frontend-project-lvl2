@@ -14,7 +14,10 @@ const filepath3 = getFixturePath('file1.yaml');
 const filepath4 = getFixturePath('file2.yml');
 
 test('testing genDiff', () => {
-  const stylish = readFile(getFixturePath('output'));
+  const stylish = readFile(getFixturePath('stylish'));
+  const plain = readFile(getFixturePath('plain'));
   expect(genDiff(filepath1, filepath2)).toEqual(stylish);
   expect(genDiff(filepath3, filepath4)).toEqual(stylish);
+  expect(genDiff(filepath1, filepath2, { format: 'plain' })).toEqual(plain);
+  expect(genDiff(filepath3, filepath4, { format: 'plain' })).toEqual(plain);
 });

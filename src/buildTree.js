@@ -38,7 +38,7 @@ const buildTree = (object1, object2) => {
         return { nodeName, status, value: val2 };
       }
       return {
-        nodeName, status, value: val1, oldValue: val2,
+        nodeName, status, oldValue: val1, value: val2,
       };
     });
   };
