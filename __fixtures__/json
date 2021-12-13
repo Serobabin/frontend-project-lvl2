@@ -1,0 +1,116 @@
+[
+ {
+  "nodeName": "common",
+  "status": "unchanged",
+  "children": [
+   {
+    "nodeName": "follow",
+    "status": "added",
+    "value": false
+   },
+   {
+    "nodeName": "setting1",
+    "status": "unchanged",
+    "value": "Value 1"
+   },
+   {
+    "nodeName": "setting2",
+    "status": "deleted",
+    "value": 200
+   },
+   {
+    "nodeName": "setting3",
+    "status": "changed",
+    "oldValue": true,
+    "value": null
+   },
+   {
+    "nodeName": "setting4",
+    "status": "added",
+    "value": "blah blah"
+   },
+   {
+    "nodeName": "setting5",
+    "status": "added",
+    "value": {
+     "key5": "value5"
+    }
+   },
+   {
+    "nodeName": "setting6",
+    "status": "unchanged",
+    "children": [
+     {
+      "nodeName": "doge",
+      "status": "unchanged",
+      "children": [
+       {
+        "nodeName": "wow",
+        "status": "changed",
+        "oldValue": "",
+        "value": "so much"
+       }
+      ]
+     },
+     {
+      "nodeName": "key",
+      "status": "unchanged",
+      "value": "value"
+     },
+     {
+      "nodeName": "ops",
+      "status": "added",
+      "value": "vops"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "nodeName": "group1",
+  "status": "unchanged",
+  "children": [
+   {
+    "nodeName": "baz",
+    "status": "changed",
+    "oldValue": "bas",
+    "value": "bars"
+   },
+   {
+    "nodeName": "foo",
+    "status": "unchanged",
+    "value": "bar"
+   },
+   {
+    "nodeName": "nest",
+    "status": "changed",
+    "oldValue": {
+     "key": "value"
+    },
+    "value": "str"
+   }
+  ]
+ },
+ {
+  "nodeName": "group2",
+  "status": "deleted",
+  "value": {
+   "abc": 12345,
+   "deep": {
+    "id": 45
+   }
+  }
+ },
+ {
+  "nodeName": "group3",
+  "status": "added",
+  "value": {
+   "deep": {
+    "id": {
+     "number": 45
+    }
+   },
+   "fee": 100500
+  }
+ }
+]

@@ -5,4 +5,9 @@
 [![Node CI](https://github.com/Serobabin/frontend-project-lvl2/workflows/Node%20CI/badge.svg)](https://github.com/Serobabin/frontend-project-lvl2/actions)
 
 https://asciinema.org/a/2SIgy54PqnolK5eYddY18wQ6Y
-https://asciinema.org/a/pO3lCYUHpwozp0DfVpTaqZRh9
+
+https://asciinema.org/a/pvl0AAsVUe8Hjn5ILVgehEgHe
+
+https://asciinema.org/a/RKazUqZVbjCePU8o7T9oxpUXX
+
+https://asciinema.org/a/pGmII5XHnjr7zFsYBniFrmBBL
