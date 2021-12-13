@@ -11,7 +11,7 @@ const makeObject = (filepath) => {
   return object;
 };
 
-export const genDiff = (filepath1, filepath2, formatName = { format: 'stylish' }) => {
+export const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const object1 = makeObject(filepath1);
   const object2 = makeObject(filepath2);
   const tree = buildTree(object1, object2);

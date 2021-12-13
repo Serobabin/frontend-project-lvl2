@@ -17,10 +17,10 @@ test('testing genDiff', () => {
   const stylish = readFile(getFixturePath('stylish'));
   const plain = readFile(getFixturePath('plain'));
   const json = readFile(getFixturePath('json'));
-  expect(genDiff(filepath1, filepath2, { format: 'stylish' })).toEqual(stylish);
-  expect(genDiff(filepath3, filepath4, { format: 'stylish' })).toEqual(stylish);
-  expect(genDiff(filepath1, filepath2, { format: 'plain' })).toEqual(plain);
-  expect(genDiff(filepath3, filepath4, { format: 'plain' })).toEqual(plain);
-  expect(genDiff(filepath1, filepath2, { format: 'json' })).toEqual(json);
-  expect(genDiff(filepath3, filepath4, { format: 'json' })).toEqual(json);
+  expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(stylish);
+  expect(genDiff(filepath3, filepath4, 'stylish')).toEqual(stylish);
+  expect(genDiff(filepath1, filepath2, 'plain')).toEqual(plain);
+  expect(genDiff(filepath3, filepath4, 'plain')).toEqual(plain);
+  expect(genDiff(filepath1, filepath2, 'json')).toEqual(json);
+  expect(genDiff(filepath3, filepath4, 'json')).toEqual(json);
 });
