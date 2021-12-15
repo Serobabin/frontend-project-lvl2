@@ -4,17 +4,16 @@ import parse from './parsers.js';
 import buildTree from './buildTree.js';
 import format from './formatters/index.js';
 
-const makeObject = (filepath) => {
-  const data = fs.readFileSync(filepath, 'utf-8');
-  const extname = path.extname(filepath);
-  const object = parse(data, extname);
-  return object;
+const makeData = (filepath) => {
+  const fileContent = fs.readFileSync(filepath, 'utf-8');
+  const dataFormat = path.extname(filepath).slice(1);
+  return parse(fileContent, dataFormat);
 };
 
 export const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
-  const object1 = makeObject(filepath1);
-  const object2 = makeObject(filepath2);
-  const tree = buildTree(object1, object2);
+  const data1 = makeData(filepath1);
+  const data2 = makeData(filepath2);
+  const tree = buildTree(data1, data2);
   return format(tree, formatName);
 };
 export default genDiff;
