@@ -15,7 +15,7 @@ const plain = (tree) => {
       const { nodeName } = node;
       const { status } = node;
       const { value } = node;
-      if (!_.has(node, 'children')) {
+      if (status !== 'nested') {
         if (status === 'unchanged') {
           return [];
         }

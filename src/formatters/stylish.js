@@ -6,7 +6,7 @@ const getOperations = (node) => {
     return { firstOperation: '- ' };
   } if (status === 'added') {
     return { firstOperation: '+ ' };
-  } if (status === 'unchanged') {
+  } if (status === 'unchanged' || status === 'nested') {
     return { firstOperation: '  ' };
   }
   return { firstOperation: '- ', secondOperation: '+ ' };
@@ -42,7 +42,7 @@ const stylish = (tree) => {
       const { value } = node;
       const operations = getOperations(node);
       const { firstOperation } = operations;
-      if (!_.has(node, 'children')) {
+      if (status !== 'nested') {
         if (status !== 'changed') {
           return `${currentIndent}${firstOperation}${nodeName}: ${stringify(value, indent, indentSize)}`;
         }

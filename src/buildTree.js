@@ -14,7 +14,7 @@ const buildTree = (data1, data2) => {
       const val2 = getNodeValue(obj2, key);
       if ((_.isObject(val1) && _.isObject(val2)) && (!_.isArray(val1) && !_.isArray(val2))) {
         return {
-          nodeName, status: 'unchanged', children: iter(val1, val2),
+          nodeName, status: 'nested', children: iter(val1, val2),
         };
       } if (!_.has(obj1, key)) {
         return { nodeName, status: 'added', value: val2 };
