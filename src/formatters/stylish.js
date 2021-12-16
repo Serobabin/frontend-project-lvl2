@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const getOperations = (node) => {
   const { status } = node;
   if (status === 'deleted') {
